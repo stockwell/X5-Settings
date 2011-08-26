@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    <CheckBox android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Enable Duplicated Filter" android:id="@+id/checkBox1"></CheckBox>
+    <SeekBar android:layout_height="wrap_content" android:id="@+id/seekBar1" android:layout_width="match_parent" android:layout_marginLeft="15dip" android:layout_marginRight="15dip" android:max="15"></SeekBar>
+    <TextView android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="textView1" android:layout_gravity="right"></TextView>
+    <Button android:layout_height="wrap_content" android:layout_gravity="center" android:layout_width="wrap_content" android:text="Apply" android:id="@+id/button1"></Button>
+</LinearLayout>
