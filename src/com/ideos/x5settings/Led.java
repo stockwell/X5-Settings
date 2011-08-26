@@ -55,12 +55,12 @@ public class Led extends Activity{
 	    switch(Index)
 	    {
 	    case 0:
-	    	command1 = "echo 1 > /sys/module/RGB_led/parameters/off_when_suspeneded\n" +
+	    	command1 = "echo 1 > /sys/module/RGB_led/parameters/off_when_suspended\n" +
 	    			   "echo 0 > /sys/module/RGB_led/parameters/backlight_notification";
 	    	command2 = "echo 1 > /sys/module/RGB_led/parameters/off_when_suspended"; 
 	    	break;
 	    case 1:
-	    	command1 = "echo 0 > /sys/module/RGB_led/parameters/off_when_suspeneded\n" +
+	    	command1 = "echo 0 > /sys/module/RGB_led/parameters/off_when_suspended\n" +
 	    			   "echo 0 > /sys/module/RGB_led/parameters/backlight_notification";
 	    	command2 = "echo 0 > /sys/module/RGB_led/parameters/off_when_suspended";
 	    	break;
