@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">X5 Settings</string>
+    <string name="enable_feedback">Enable Feedback</string>
+    <string name="complete">Complete</string>
     <string-array name="menuItems_array">
     	<item>Touchscreen</item>
     </string-array>

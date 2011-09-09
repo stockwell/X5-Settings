@@ -80,7 +80,8 @@ public class Haptic extends Activity{
 				Rootcommands.runRootCommand("chmod +x /system/etc/init.d/10vibrate");
 				Rootcommands.runRootCommand("mount -o ro,remount -t ext4 /dev/block/mmcblk0p12 /system");
 				WRITE = false;
-				Toast vibe = Toast.makeText(this, "Complete", 2000);
+				Toast vibe = Toast.makeText(this, R.string.complete, 2000);
+				
 				vibe.show();
 			}
 			else {
