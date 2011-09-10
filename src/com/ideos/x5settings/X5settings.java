@@ -18,7 +18,7 @@ public class X5settings extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) { 
     	super.onCreateOptionsMenu(menu);
-    	MenuItem item = menu.add("Exit");
+    	MenuItem item = menu.add(R.string.exit);
     	item.setIcon(R.drawable.ic_menu_quit);
 		return true;
 	}
@@ -26,22 +26,16 @@ public class X5settings extends ListActivity {
 		finish();
 		return true;
 	}
-	String[] settingsItems = {
-			"Softkey Haptic Feedback",
-			"Touchscreen Filter",
-			"Internal/External Storage Selection",
-			"Notification LED",
-			"CPU Frequency and Governor",
-			"I/O Scheduler",
-			"Audio Settings",
-			};  
-	
+
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        String[] settingsItems = getResources().getStringArray(R.array.menuItems_array);
         setListAdapter(new ArrayAdapter<String>(this,
    			 android.R.layout.simple_list_item_1, settingsItems));
+        
         if (!ROOT){
     		Toast noroot = Toast.makeText(this, "Cannot obtain root access, is su installed?", 2000);
     		noroot.show();
@@ -50,22 +44,22 @@ public class X5settings extends ListActivity {
 
 	protected void onListItemClick(ListView l, View v, int position, long id) {
     	super.onListItemClick(l, v, position, id);
-    	Object o = this.getListAdapter().getItem(position);
-    	String selection = o.toString();
+    	//Object o = this.getListAdapter().getItem(position);
+    	//String selection = o.toString();
     	Intent myIntent;
-    	if (selection == "Softkey Haptic Feedback")
+    	if (position == 0)
     		myIntent = new Intent(v.getContext(), Haptic.class);
-    	else if (selection == "Touchscreen Filter") 	
+    	else if (position == 1)	
     		myIntent = new Intent(v.getContext(), Touchscreen.class);
-    	else if (selection ==  "Internal/External Storage Selection")
+    	else if (position == 2)
 			myIntent = new Intent(v.getContext(), Vold.class);
-    	else if (selection ==  "Notification LED")
+    	else if (position == 3)
 			myIntent = new Intent(v.getContext(), Led.class);
-    	else if (selection ==  "CPU Frequency and Governor")
+    	else if (position == 4)
 			myIntent = new Intent(v.getContext(), Cpu.class);
-    	else if (selection ==  "I/O Scheduler")
+    	else if (position == 5)
 			myIntent = new Intent(v.getContext(), Io.class);
-    	else if (selection ==  "Audio Settings")
+    	else if (position == 6)
 			myIntent = new Intent(v.getContext(), Sound.class);
     	else myIntent = null;
     	if(ROOT)startActivity(myIntent); 

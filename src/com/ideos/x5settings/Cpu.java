@@ -115,7 +115,7 @@ public class Cpu extends Activity{
 			Rootcommands.runRootCommand("chmod +x /system/etc/init.d/13cpu");
 			Rootcommands.runRootCommand("mount -o ro,remount -t ext4 /dev/block/mmcblk0p12 /system");
 			WRITE = false;
-			Toast complete = Toast.makeText(this, "Complete", 2000);
+			Toast complete = Toast.makeText(this, R.string.complete, 2000);
 			complete.show();
 		}
 		else {

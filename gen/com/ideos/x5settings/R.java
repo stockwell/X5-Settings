@@ -10,6 +10,8 @@ package com.ideos.x5settings;
 public final class R {
     public static final class array {
         public static final int menuItems_array=0x7f050000;
+        public static final int sel_led=0x7f050002;
+        public static final int sel_storage=0x7f050001;
     }
     public static final class attr {
     }
@@ -45,6 +47,14 @@ public final class R {
     public static final class string {
         public static final int app_name=0x7f040000;
         public static final int complete=0x7f040002;
+        public static final int complete_reboot=0x7f040003;
+        public static final int cpu_covemor=0x7f040006;
+        public static final int dup_filter=0x7f040005;
         public static final int enable_feedback=0x7f040001;
+        public static final int exit=0x7f040004;
+        public static final int io_sch=0x7f040009;
+        public static final int max_fre=0x7f040008;
+        public static final int min_fre=0x7f040007;
+        public static final int use_phone_mic=0x7f04000a;
     }
 }

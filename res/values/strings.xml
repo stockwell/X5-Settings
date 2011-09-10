@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">X5 Settings</string>
-    <string name="enable_feedback">Enable Feedback</string>
-    <string name="complete">Complete</string>
-    <string-array name="menuItems_array">
-    	<item>Touchscreen</item>
-    </string-array>
+	<string name="app_name">X5 Settings</string>
+	<string name="enable_feedback">Enable Feedback</string>
+	<string name="complete">Complete</string>
+	<string name="complete_reboot">Complete, reboot for change to take affect</string>
+	<string name="exit">Exit</string>
+	<string name="dup_filter">Enable Duplicated Filter</string>
+	<string name="cpu_covemor">Govermor</string>
+	<string name="min_fre">Minimum Frequency</string>
+	<string name="max_fre">Maximum Frequency</string>
+	<string name="io_sch">I/O Scheduler</string>
+	<string name="use_phone_mic">Force phone mic with headset</string>	
+	<string-array name="menuItems_array">
+		<item>Softkey Haptic Feedback</item>
+		<item>Touchscreen Filter</item>
+		<item>Internal/External Storage Selection</item>
+		<item>Notification LED</item>
+		<item>CPU Frequency and Governor</item>
+		<item>I/O Scheduler</item>
+		<item>Audio Settings</item>
+	</string-array>
+	<string-array name="sel_storage">
+		<item>Internal Storage</item>
+		<item>External Storage</item>
+	</string-array>
+	<string-array name="sel_led">
+		<item>Disable during sleep</item>
+		<item>Enable during sleep</item>
+		<item>Backlight notification</item>
+	</string-array>
+
 </resources>

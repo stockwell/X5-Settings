@@ -4,7 +4,7 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
-    <CheckBox android:text="Force phone mic with headset" android:id="@+id/checkBox1" android:layout_width="wrap_content" android:layout_height="wrap_content"></CheckBox>
+    <CheckBox android:text="@string/use_phone_mic" android:id="@+id/checkBox1" android:layout_width="wrap_content" android:layout_height="wrap_content"></CheckBox>
     <Button android:layout_width="wrap_content" android:id="@+id/button1" android:layout_gravity="center" android:layout_height="wrap_content" android:text="@android:string/ok"></Button>
     
 </LinearLayout>
