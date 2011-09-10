@@ -15,18 +15,15 @@ import android.widget.Spinner;
 public class Vold extends Activity{
 	private static String voldPrimary = voldStatus();
 	
-	String[] voldItems = {
-			"Internal Storage",
-			"External Storage",
-		};
-	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vold);
         
-        Spinner s = (Spinner) findViewById(R.id.spinner1);
-    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        String[] voldItems = getResources().getStringArray(R.array.sel_storage);
+     	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
     	android.R.layout.simple_spinner_item, voldItems);
+     	
+        Spinner s = (Spinner) findViewById(R.id.spinner1);
     	s.setAdapter(adapter);
     	
     	final Button applyButton = (Button) findViewById(R.id.button1);
@@ -56,7 +53,7 @@ public class Vold extends Activity{
 			Rootcommands.runRootCommand(command + "'> /etc/vold.fstab");
 			Rootcommands.runRootCommand("mount -o ro,remount -t ext4 /dev/block/mmcblk0p12 /system");
 			WRITE = false;
-			Toast complete = Toast.makeText(this, "Complete, reboot for change to take affect", 2000);
+			Toast complete = Toast.makeText(this, R.string.complete_reboot, 2000);
 			complete.show();
 		}
 		return true;

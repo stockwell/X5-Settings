@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">U8800设置</string>
+    <string name="enable_feedback">使能反馈</string>
+    <string name="complete">完成</string>
+    <string name="complete_reboot">完成, 重启后生效</string>
+    <string name="exit">退出</string>
+    <string name="dup_filter">使能重复过滤</string>
+    <string name="cpu_covemor">管理方式</string>
+	<string name="min_fre">最小频率</string>
+	<string name="max_fre">最大频率</string>
+	<string name="io_sch">I/O 调度模式</string>
+	<string name="use_phone_mic">强制使用耳机麦克风</string>
+    <string-array name="menuItems_array">
+    	<item>软键盘震动强度</item>
+    	<item>触摸屏过滤器</item>
+    	<item>内部/外部 存储器选择</item>
+    	<item>通知 LED</item>
+    	<item>CPU 频率管理 </item>
+    	<item>I/O 调度</item>
+    	<item>音频设置</item>
+    </string-array>
+    <string-array name="sel_storage">
+		<item>內部存储器</item>
+		<item>外部存储器</item>
+	</string-array>
+	<string-array name="sel_led">
+		<item>睡眠时不使用</item>
+		<item>睡眠时使用</item>
+		<item>背光通知</item>
+	</string-array>	
+	
+</resources>

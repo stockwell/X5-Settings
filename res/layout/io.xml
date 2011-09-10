@@ -4,8 +4,8 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
-    <TextView android:id="@+id/textView1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="I/O Scheduler"></TextView>
+    <TextView android:id="@+id/textView1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/io_sch"></TextView>
     <Spinner android:id="@+id/spinner1" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginLeft="10dip" android:layout_marginRight="10dip"></Spinner>
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/button1" android:layout_gravity="center" android:text="Apply"></Button>
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/button1" android:layout_gravity="center" android:text="@android:string/ok"></Button>
     
 </LinearLayout>

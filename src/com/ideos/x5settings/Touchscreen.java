@@ -74,7 +74,7 @@ public class Touchscreen extends Activity{
 			Rootcommands.runRootCommand("chmod +x /etc/init.d/11dupfilter");
 			Rootcommands.runRootCommand("mount -o ro,remount -t ext4 /dev/block/mmcblk0p12 /system");
 			WRITE = false;
-			Toast complete = Toast.makeText(this, "Complete", 2000);
+			Toast complete = Toast.makeText(this, R.string.complete, 2000);
 			complete.show();
 		}
 		else {
