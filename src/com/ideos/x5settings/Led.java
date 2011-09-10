@@ -14,19 +14,16 @@ import android.widget.Spinner;
 
 public class Led extends Activity{
 	private static String ledConfig;
-	String[] ledItems = {
-			"Disable during sleep",
-			"Enable during sleep",
-			"Backlight notification",
-		};
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.led);
         
-        Spinner s = (Spinner) findViewById(R.id.spinner1);
+        
+        String[] ledItems = getResources().getStringArray(R.array.sel_led);
     	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
     	android.R.layout.simple_spinner_item, ledItems);
+    	Spinner s = (Spinner) findViewById(R.id.spinner1);
     	s.setAdapter(adapter);
     	
     	final Button applyButton = (Button) findViewById(R.id.button1);
@@ -79,7 +76,7 @@ public class Led extends Activity{
 			Rootcommands.runRootCommand("chmod +x /etc/init.d/12leds");
 			Rootcommands.runRootCommand("mount -o ro,remount -t ext4 /dev/block/mmcblk0p12 /system");
 			WRITE = false;
-			Toast complete = Toast.makeText(this, "Complete", 2000);
+			Toast complete = Toast.makeText(this, R.string.complete, 2000);
 			complete.show();
 		}
 		else {
