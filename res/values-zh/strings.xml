@@ -6,7 +6,7 @@
     <string name="complete_reboot">完成, 重启后生效</string>
     <string name="exit">退出</string>
     <string name="dup_filter">使能重复过滤</string>
-    <string name="cpu_covemor">管理方式</string>
+    <string name="cpu_governor">管理方式</string>
 	<string name="min_fre">最小频率</string>
 	<string name="max_fre">最大频率</string>
 	<string name="io_sch">I/O 调度模式</string>

@@ -6,7 +6,7 @@
 	<string name="complete_reboot">Complete, reboot for change to take affect</string>
 	<string name="exit">Exit</string>
 	<string name="dup_filter">Enable Duplicated Filter</string>
-	<string name="cpu_covemor">Govermor</string>
+	<string name="cpu_governor">Governor</string>
 	<string name="min_fre">Minimum Frequency</string>
 	<string name="max_fre">Maximum Frequency</string>
 	<string name="io_sch">I/O Scheduler</string>
