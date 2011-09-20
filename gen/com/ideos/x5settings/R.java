@@ -24,6 +24,7 @@ public final class R {
         public static final int button1=0x7f060009;
         public static final int button2=0x7f06000b;
         public static final int checkBox1=0x7f06000a;
+        public static final int checkBox2=0x7f06000d;
         public static final int seekBar1=0x7f060004;
         public static final int seekBar2=0x7f060007;
         public static final int spinner1=0x7f060001;
@@ -55,6 +56,7 @@ public final class R {
         public static final int io_sch=0x7f040009;
         public static final int max_fre=0x7f040008;
         public static final int min_fre=0x7f040007;
+        public static final int speakerphone_echo_fix=0x7f04000b;
         public static final int use_phone_mic=0x7f04000a;
     }
 }

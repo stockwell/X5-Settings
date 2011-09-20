@@ -11,6 +11,7 @@
 	<string name="max_fre">最大频率</string>
 	<string name="io_sch">I/O 调度模式</string>
 	<string name="use_phone_mic">强制使用耳机麦克风</string>
+	<string name="speakerphone_echo_fix">Fix speakerphone echo</string>
     <string-array name="menuItems_array">
     	<item>软键盘震动强度</item>
     	<item>触摸屏过滤器</item>

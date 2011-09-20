@@ -11,6 +11,7 @@
 	<string name="max_fre">Maximum Frequency</string>
 	<string name="io_sch">I/O Scheduler</string>
 	<string name="use_phone_mic">Force phone mic with headset</string>	
+	<string name="speakerphone_echo_fix">Fix speakerphone echo</string>
 	<string-array name="menuItems_array">
 		<item>Softkey Haptic Feedback</item>
 		<item>Touchscreen Filter</item>
@@ -29,5 +30,5 @@
 		<item>Enable during sleep</item>
 		<item>Backlight notification</item>
 	</string-array>
-
+	
 </resources>
