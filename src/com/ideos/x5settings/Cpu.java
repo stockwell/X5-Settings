@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,7 @@ public class Cpu extends Activity{
 	private static String[] currentFreq;
 	private static String[] freqArray;
 	private static String currentGovernor;
+	private Handler mHandler = new Handler();
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,10 +84,13 @@ public class Cpu extends Activity{
 		max.setMax(freqArray.length-1);
 		min.setMax(freqArray.length-1);
 		minFreqValue.setText(freqArray[0]);
-
+		
 		govs.setSelection(Arrays.asList(availableGovernors).indexOf(currentGovernor));
 		max.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[1]));
 		min.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[0]));
+		
+		mHandler.removeCallbacks(UpdateCpuFreq);
+        mHandler.post(UpdateCpuFreq);
 	}
 	
 	public void setCPU(){
@@ -200,5 +205,43 @@ public class Cpu extends Activity{
 		}
 		
 		return currentGovernor;
+	}
+
+private Runnable UpdateCpuFreq = new Runnable() {
+	   public void run() {
+		   String currentFreq = null;
+		   try {
+				FileReader input = new FileReader("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq");
+				BufferedReader reader = new BufferedReader(input);
+				
+				currentFreq = reader.readLine();
+				
+				reader.close();
+				input.close();
+				Log.d("freq", currentFreq);
+			} catch (Exception e) {
+				Log.d("X5 Settings", "Unexpected error: "+e.getMessage());
+			}
+		   ((TextView) findViewById(R.id.textView6)).setText(currentFreq);  
+		   mHandler.postDelayed(UpdateCpuFreq, 800);
+	   }
+	};
+	
+	@Override
+    protected void onDestroy() {
+		mHandler.removeCallbacks(UpdateCpuFreq);
+		super.onDestroy();
+	}
+	
+	@Override
+	protected void onPause(){
+		mHandler.removeCallbacks(UpdateCpuFreq);
+		super.onPause();
+	}
+	
+	@Override
+	protected void onResume(){
+		mHandler.post(UpdateCpuFreq);
+		super.onResume();
 	}
 }
