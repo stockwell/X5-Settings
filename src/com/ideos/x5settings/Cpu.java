@@ -88,9 +88,6 @@ public class Cpu extends Activity{
 		govs.setSelection(Arrays.asList(availableGovernors).indexOf(currentGovernor));
 		max.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[1]));
 		min.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[0]));
-		
-		mHandler.removeCallbacks(UpdateCpuFreq);
-        mHandler.post(UpdateCpuFreq);
 	}
 	
 	public void setCPU(){
