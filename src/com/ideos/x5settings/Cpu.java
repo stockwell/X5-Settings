@@ -81,7 +81,8 @@ public class Cpu extends Activity{
     	});
 		max.setMax(freqArray.length-1);
 		min.setMax(freqArray.length-1);
-		
+		minFreqValue.setText(freqArray[0]);
+
 		govs.setSelection(Arrays.asList(availableGovernors).indexOf(currentGovernor));
 		max.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[1]));
 		min.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[0]));
