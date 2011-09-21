@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">X5 Settings</string>
+	<string name="enable_feedback">Permitir Comentários</string>
+	<string name="complete">Completo</string>
+	<string name="complete_reboot">Completo, reinicia para fazer efeito</string>
+	<string name="exit">Fechar</string>
+	<string name="dup_filter">Activa o Filtro Duplicado do touchscreen</string>
+	<string name="cpu_governor">Escalonador do CPU</string>
+	<string name="min_fre">Frequência Mínima</string>
+	<string name="max_fre">Frequência Máxima</string>
+	<string name="io_sch">Sequenciador I/O</string>
+	<string name="use_phone_mic">Força o uso do microfone to telemóvel com o headset</string>
+	<string name="speakerphone_echo_fix">Fix para o echo do microfone</string>
+	<string-array name="menuItems_array">
+		<item>Teclas Haptic Feedback</item>
+		<item>Filtro do Touchscreen</item>
+		<item>Selecção do armazenamento Interno/Externo</item>
+		<item>Notificação LED</item>
+		<item>Frequência e escalonador do CPU</item>
+		<item>Sequenciador I/O</item>
+		<item>Definições de som</item>
+	</string-array>
+	<string-array name="sel_storage">
+		<item>Armazenamento Interno</item>
+		<item>Armazenamento Externo</item>
+	</string-array>
+	<string-array name="sel_led">
+		<item>Desactivar enquanto o telemóvel está a dormir</item>
+		<item>Activar enquanto o telem+ovel está a dormir</item>
+		<item>Notificações backlight</item>
+	</string-array>
+	
+</resources>
