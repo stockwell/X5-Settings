@@ -14,12 +14,12 @@ import android.widget.Toast;
 
 public class Touchscreen extends Activity{
 	private static int filterThreshold;
-	
+    
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.touchscreen);
         
-        final Button applyButton = (Button) findViewById(R.id.button1);
+    	final Button applyButton = (Button) findViewById(R.id.button1);
         final CheckBox filter = (CheckBox) findViewById(R.id.checkBox1);
         final SeekBar seekBar = (SeekBar)findViewById(R.id.seekBar1);
         final TextView seekBarValue = (TextView)findViewById(R.id.textView2);
@@ -39,7 +39,6 @@ public class Touchscreen extends Activity{
 				}
 			}
 		});
-			
         
         applyButton.setOnClickListener(new View.OnClickListener() {
         	 public void onClick(View view) {

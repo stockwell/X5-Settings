@@ -19,15 +19,14 @@ public class Led extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.led);
         
+        final Button applyButton = (Button) findViewById(R.id.button1);
+    	final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
         
         String[] ledItems = getResources().getStringArray(R.array.sel_led);
     	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
     	android.R.layout.simple_spinner_item, ledItems);
-    	Spinner s = (Spinner) findViewById(R.id.spinner1);
-    	s.setAdapter(adapter);
     	
-    	final Button applyButton = (Button) findViewById(R.id.button1);
-    	final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+    	spinner.setAdapter(adapter);
     	
     	applyButton.setOnClickListener(new View.OnClickListener() {
     		public void onClick(View view) {
@@ -101,7 +100,7 @@ public class Led extends Activity{
 	    		input = new FileReader("/sys/module/RGB_led/parameters/off_when_suspended");
 		    	reader = new BufferedReader(input);
 		    	sleep = reader.readLine();
-		    	Log.d("x5", sleep);
+		    	
 		    	reader.close();
 		    	input.close();
 	    	}

@@ -26,13 +26,13 @@ public class Cpu extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cpu);
-        
+    	
         final Button applyButton = (Button) findViewById(R.id.button1);
     	final TextView minFreqValue = (TextView)findViewById(R.id.textView4);
     	final TextView maxFreqValue = (TextView)findViewById(R.id.textView5);
-    	final SeekBar min = (SeekBar) findViewById(R.id.seekBar1);
-    	final SeekBar max = (SeekBar) findViewById(R.id.seekBar2);
-    	
+    	final SeekBar minSeekBar = (SeekBar) findViewById(R.id.seekBar1);
+    	final SeekBar maxSeekBar = (SeekBar) findViewById(R.id.seekBar2);
+        
     	currentFreq = getMinMax();
     	currentGovernor = getCurrentGovernor();
     	freqArray = getFrequencies();
@@ -50,11 +50,11 @@ public class Cpu extends Activity{
 		});   
     	
     	
-		min.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+		minSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 			public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
-				if(progress>max.getProgress()){ 
-					progress = max.getProgress();
-					min.setProgress(progress);
+				if(progress>maxSeekBar.getProgress()){ 
+					progress = maxSeekBar.getProgress();
+					minSeekBar.setProgress(progress);
 				}
 				minFreqValue.setText(freqArray[progress]);
 			}           
@@ -66,11 +66,11 @@ public class Cpu extends Activity{
 			}
     	});
 		
-		max.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+		maxSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 			public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
-				if(progress<min.getProgress()){
-					progress = min.getProgress();
-					max.setProgress(progress);
+				if(progress<minSeekBar.getProgress()){
+					progress = minSeekBar.getProgress();
+					maxSeekBar.setProgress(progress);
 				}
 				maxFreqValue.setText(freqArray[progress]);
 			}           
@@ -81,24 +81,24 @@ public class Cpu extends Activity{
 				// TODO Auto-generated method stub
 			}
     	});
-		max.setMax(freqArray.length-1);
-		min.setMax(freqArray.length-1);
+		maxSeekBar.setMax(freqArray.length-1);
+		minSeekBar.setMax(freqArray.length-1);
 		minFreqValue.setText(freqArray[0]);
 		
 		govs.setSelection(Arrays.asList(availableGovernors).indexOf(currentGovernor));
-		max.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[1]));
-		min.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[0]));
+		maxSeekBar.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[1]));
+		minSeekBar.setProgress(Arrays.asList(freqArray).indexOf(currentFreq[0]));
 	}
 	
 	public void setCPU(){
 		boolean WRITE = false;
 		
 		String min = "echo ";
-		min += ((TextView) findViewById(R.id.textView4)).getText();
+		min += ((TextView)findViewById(R.id.textView4)).getText();
 		min += " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq";
 		
 		String max = "echo ";
-		max += ((TextView) findViewById(R.id.textView5)).getText();
+		max += ((TextView)findViewById(R.id.textView5)).getText();
 		max += " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq";
 		
 		String governor = "echo ";
@@ -215,7 +215,6 @@ private Runnable UpdateCpuFreq = new Runnable() {
 				
 				reader.close();
 				input.close();
-				Log.d("freq", currentFreq);
 			} catch (Exception e) {
 				Log.d("X5 Settings", "Unexpected error: "+e.getMessage());
 			}

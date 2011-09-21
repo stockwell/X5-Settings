@@ -20,6 +20,7 @@
 		<item>CPU Frequency and Governor</item>
 		<item>I/O Scheduler</item>
 		<item>Audio Settings</item>
+		<item>Dynamic Undervolting</item>
 	</string-array>
 	<string-array name="sel_storage">
 		<item>Internal Storage</item>
@@ -30,5 +31,21 @@
 		<item>Enable during sleep</item>
 		<item>Backlight notification</item>
 	</string-array>
-	
+	<string-array name="donators">
+		<item>Tommo88</item>
+		<item>Ho Made</item>
+		<item>P. Santos</item>
+		<item>haydnlj</item>
+		<item>khunjj</item>
+		<item>N. Kesina</item>
+		<item>R Rhbäck</item>
+		<item>Gefjon</item>
+		<item>bazz07</item>
+		<item>L. Luc</item>
+		<item>saran</item>
+		<item>C. Grama</item>
+		<item>sergejk</item>
+		<item>A. Robson</item>
+		<item>Trevh</item>
+	</string-array>
 </resources>

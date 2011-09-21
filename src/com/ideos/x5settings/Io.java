@@ -16,13 +16,13 @@ import android.widget.Spinner;
 public class Io extends Activity{
 	private static String[] availableSchedulers;
 	private static String currentScheduler;
-	
+
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.io);
-        
+
         final Button applyButton = (Button) findViewById(R.id.button1);
-        Spinner scheds = (Spinner) findViewById(R.id.spinner1);
+        final Spinner scheds = (Spinner) findViewById(R.id.spinner1);
         
     	availableSchedulers = getSchedulers();
     	int i = 0;
@@ -88,5 +88,4 @@ public class Io extends Activity{
 		}
 	    return schedulers;
 	}
-
 }

@@ -20,6 +20,7 @@
     	<item>CPU 频率管理 </item>
     	<item>I/O 调度</item>
     	<item>音频设置</item>
+    	<item>Dynamic Undervolting</item>
     </string-array>
     <string-array name="sel_storage">
 		<item>內部存储器</item>

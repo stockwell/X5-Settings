@@ -19,15 +19,14 @@ public class Vold extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vold);
         
+        final Button applyButton = (Button) findViewById(R.id.button1);
+    	final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+        
         String[] voldItems = getResources().getStringArray(R.array.sel_storage);
      	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
     	android.R.layout.simple_spinner_item, voldItems);
      	
-        Spinner s = (Spinner) findViewById(R.id.spinner1);
-    	s.setAdapter(adapter);
-    	
-    	final Button applyButton = (Button) findViewById(R.id.button1);
-    	final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+    	spinner.setAdapter(adapter);
     	
     	applyButton.setOnClickListener(new View.OnClickListener() {
     		public void onClick(View view) {

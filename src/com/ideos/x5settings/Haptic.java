@@ -16,6 +16,8 @@ public class Haptic extends Activity{
 	private Vibrator hapticVib;
 	private static int vibLength;
 	
+	
+    
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.haptic);
@@ -28,6 +30,7 @@ public class Haptic extends Activity{
         vibLength = vibrateStatus();
         seekBar.setProgress(vibLength);
         seekBarValue.setText(Integer.toString(vibLength));
+        
         if(vibLength>0) vibrate.setChecked(true);
         hapticVib = (Vibrator) this.getSystemService(VIBRATOR_SERVICE);
         
