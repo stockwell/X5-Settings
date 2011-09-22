@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout android:id="@+id/RelativeLayout1"
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
-    <TextSwitcher android:layout_height="wrap_content" android:id="@+id/textSwitcher1" android:layout_width="match_parent"></TextSwitcher>
-    
-</LinearLayout>
+  android:layout_height="match_parent" android:gravity="center_horizontal">
+    <TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:text="X5settings" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"></TextView>
+    <TextView android:id="@+id/TextView04" android:layout_width="wrap_content" android:text="Created by Stockwell (2011)" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceSmall" android:layout_below="@+id/TextView01" android:layout_centerHorizontal="true"></TextView>
+    <TextView android:id="@+id/TextView03" android:layout_width="wrap_content" android:text="For any questions or queries regarding X5settings or the u8800 Miui port, contact Stockwell at www.xda-developers.com" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceSmall" android:layout_below="@+id/TextView05" android:layout_centerHorizontal="true" android:layout_marginLeft="20dip" android:layout_marginRight="20dip"></TextView>
+    <TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:text="Dedication" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_below="@+id/TextView03" android:layout_centerHorizontal="true" android:layout_marginTop="20dp"></TextView>
+    <TextView android:id="@+id/TextView06" android:layout_width="wrap_content" android:text="This app and Miui port would not have been possible without the help and cumulative efforts of many people. I would especially like to thank the fellow developers on xda-developers - dzo, franciscofranco, ksatta and genokolar - for their work on the u8800, and the many who donated toward this project to ensure its continued existence." android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceSmall" android:layout_below="@+id/TextView02" android:layout_alignParentRight="true" android:layout_marginLeft="20dip" android:layout_marginRight="20dip"></TextView>
+    <TextView android:id="@+id/TextView05" android:layout_width="wrap_content" android:text="Support" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_below="@+id/TextView04" android:layout_centerHorizontal="true" android:layout_marginTop="16dp"></TextView>
+    <TextSwitcher android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/textSwitcher1" android:layout_below="@+id/TextView07" android:layout_alignParentLeft="true"></TextSwitcher>
+    <TextView android:id="@+id/TextView07" android:layout_width="wrap_content" android:text="Donators" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_below="@+id/TextView06" android:layout_centerHorizontal="true" android:layout_marginTop="16dp"></TextView>
+</RelativeLayout>

@@ -44,8 +44,6 @@ public class X5settings extends ListActivity {
 
 	protected void onListItemClick(ListView l, View v, int position, long id) {
     	super.onListItemClick(l, v, position, id);
-    	//Object o = this.getListAdapter().getItem(position);
-    	//String selection = o.toString();
     	Intent myIntent;
     	if (position == 0)
     		myIntent = new Intent(v.getContext(), Haptic.class);
