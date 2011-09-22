@@ -23,6 +23,7 @@
 		<item>I/O Scheduler</item>
 		<item>Audio Settings</item>
 		<item>Dynamic Undervolting</item>
+		<item>About X5settings</item>
 	</string-array>
 	<string-array name="sel_storage">
 		<item>Internal Storage</item>

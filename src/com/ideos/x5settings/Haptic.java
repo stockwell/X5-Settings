@@ -17,14 +17,18 @@ public class Haptic extends Activity{
 	private Vibrator hapticVib;
 	private static int vibLength;
 	
+	private Button applyButton;
+	private CheckBox vibrate;
+	private SeekBar seekBar;
+	private TextView seekBarValue;
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.haptic);
         
-        final Button applyButton = (Button) findViewById(R.id.button2);
-        final CheckBox vibrate = (CheckBox) findViewById(R.id.checkBox1);
-        final SeekBar seekBar = (SeekBar)findViewById(R.id.seekBar1);
-        final TextView seekBarValue = (TextView)findViewById(R.id.textView2);
+        applyButton = (Button) findViewById(R.id.button2);
+        vibrate = (CheckBox) findViewById(R.id.checkBox1);
+        seekBar = (SeekBar)findViewById(R.id.seekBar1);
+        seekBarValue = (TextView)findViewById(R.id.textView2);
         
         vibLength = vibrateStatus();
         seekBar.setProgress(vibLength);

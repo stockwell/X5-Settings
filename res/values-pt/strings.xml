@@ -12,7 +12,7 @@
 	<string name="io_sch">Sequenciador I/O</string>
 	<string name="use_phone_mic">Força o uso do microfone to telemóvel com o headset</string>
 	<string name="speakerphone_echo_fix">Fix para o echo do microfone</string>
-	<string name="disable_keypad_leds">Temporarily disable keypad LEDs</string>
+	<string name="disable_keypad_leds">Disable keypad LEDs</string>
 	<string-array name="menuItems_array">
 		<item>Teclas Haptic Feedback</item>
 		<item>Filtro do Touchscreen</item>
@@ -22,6 +22,7 @@
 		<item>Sequenciador I/O</item>
 		<item>Definições de som</item>
 		<item>Dynamic Undervolting</item>
+		<item>About X5settings</item>
 	</string-array>
 	<string-array name="sel_storage">
 		<item>Armazenamento Interno</item>
