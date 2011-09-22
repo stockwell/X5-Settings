@@ -19,6 +19,8 @@
         <activity android:name="Cpu"></activity>
         <activity android:name="Io"></activity>
         <activity android:name="Sound"></activity>
+        <activity android:name="Vdd"></activity>
+        <activity android:name="About"></activity>
 
     </application>
     

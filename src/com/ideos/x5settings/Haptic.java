@@ -12,12 +12,11 @@ import android.view.View;
 import android.util.Log;
 import android.widget.Toast;
 import android.os.Vibrator;
+
 public class Haptic extends Activity{
 	private Vibrator hapticVib;
 	private static int vibLength;
 	
-	
-    
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.haptic);
@@ -45,14 +44,12 @@ public class Haptic extends Activity{
 				}
 			}
 		});
-			
         
         applyButton.setOnClickListener(new View.OnClickListener() {
         	 public void onClick(View view) {
         		 setVibrate(vibrate.isChecked());
         	 }
         });
-        
         
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
         	  public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
@@ -68,7 +65,6 @@ public class Haptic extends Activity{
         	   }
 	       });
 	   }
-	
    
 	public void setVibrate(Boolean vibrate){
 		boolean WRITE = false;		   
@@ -84,13 +80,11 @@ public class Haptic extends Activity{
 				Rootcommands.runRootCommand("mount -o ro,remount -t ext4 /dev/block/mmcblk0p12 /system");
 				WRITE = false;
 				Toast vibe = Toast.makeText(this, R.string.complete, 2000);
-				
 				vibe.show();
 			}
 			else {
 	        	Log.d("X5 Settings", "Error writing file");
 			}
-			
 		}
 		
 	public int vibrateStatus() {
@@ -108,6 +102,5 @@ public class Haptic extends Activity{
 		}
 	    if(value == null) return 0;
 	    else return Integer.parseInt(value);
-	
 	}
 }

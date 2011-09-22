@@ -4,6 +4,7 @@
 	<string name="enable_feedback">Enable Feedback</string>
 	<string name="complete">Complete</string>
 	<string name="complete_reboot">Complete, reboot for change to take affect</string>
+	<string name="temp">Keypad backlight LEDs disabled, note this will not persist after reboot</string>
 	<string name="exit">Exit</string>
 	<string name="dup_filter">Enable Duplicated Filter</string>
 	<string name="cpu_governor">Governor</string>
@@ -12,6 +13,7 @@
 	<string name="io_sch">I/O Scheduler</string>
 	<string name="use_phone_mic">Force phone mic with headset</string>	
 	<string name="speakerphone_echo_fix">Fix speakerphone echo</string>
+	<string name="disable_keypad_leds">Disable keypad LEDs</string>
 	<string-array name="menuItems_array">
 		<item>Softkey Haptic Feedback</item>
 		<item>Touchscreen Filter</item>

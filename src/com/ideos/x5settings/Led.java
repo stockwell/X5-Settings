@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import android.widget.Spinner;
@@ -21,6 +22,7 @@ public class Led extends Activity{
         
         final Button applyButton = (Button) findViewById(R.id.button1);
     	final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+        final CheckBox keypad_led_bl = (CheckBox) findViewById(R.id.checkBox1);
         
         String[] ledItems = getResources().getStringArray(R.array.sel_led);
     	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -33,6 +35,19 @@ public class Led extends Activity{
     			setLED(spinner.getSelectedItemPosition());
           	 }
 		});   
+    	
+    	keypad_led_bl.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				Rootcommands.runRootCommand("echo "+ (((CheckBox) findViewById(R.id.checkBox1)).isChecked() ? 1 : 0) +" > /sys/module/leds_msm_pmic/parameters/disable_keypad_leds");
+				if (((CheckBox) findViewById(R.id.checkBox1)).isChecked()){
+					Rootcommands.runRootCommand("echo 0 > /sys/devices/platform/pmic-leds/leds/button-backlight/brightness");
+					Toast temp = Toast.makeText(v.getContext(), R.string.temp, 2000);
+					temp.show();
+				}
+				
+			}
+		});
     	
     	ledConfig = ledStatus();
     	
