@@ -25,7 +25,7 @@ public class Rootcommands {
 	                            }
 	                            process.destroy();
 	                    } catch (Exception e) {
-	                            // nothing
+	                            //do nothing
 	                    }
 	            }
 	            return true;

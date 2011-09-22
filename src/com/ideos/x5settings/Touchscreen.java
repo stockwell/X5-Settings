@@ -15,24 +15,26 @@ import android.widget.Toast;
 public class Touchscreen extends Activity{
 	private static int filterThreshold;
     
+	private Button applyButton;
+	private CheckBox filter;
+	private SeekBar seekBar;
+	private TextView seekBarValue;
+	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.touchscreen);
         
-    	final Button applyButton = (Button) findViewById(R.id.button1);
-        final CheckBox filter = (CheckBox) findViewById(R.id.checkBox1);
-        final SeekBar seekBar = (SeekBar)findViewById(R.id.seekBar1);
-        final TextView seekBarValue = (TextView)findViewById(R.id.textView2);
+    	applyButton = (Button) findViewById(R.id.button1);
+        filter = (CheckBox) findViewById(R.id.checkBox1);
+        seekBar = (SeekBar)findViewById(R.id.seekBar1);
+        seekBarValue = (TextView)findViewById(R.id.textView2);
         
-        filterThreshold = filterStatus();
-        seekBar.setProgress(filterThreshold);
-        seekBarValue.setText(Integer.toString(filterThreshold));
-        if(filterThreshold>0) filter.setChecked(true);
+        filterStatus();
         
         filter.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if (filter.isChecked()){
-					seekBar.setProgress(3);
+					seekBar.setProgress(5);
 				}
 				else {
 					seekBar.setProgress(0);					
@@ -79,24 +81,22 @@ public class Touchscreen extends Activity{
 		else {
         	Log.d("X5 Settings", "Error writing file");
 		}
-		
 	}
 		
-	public int filterStatus() {
-		String value;
+	public void filterStatus() {
+		String filterThreshold;
 		try {
 	    	FileReader input = new FileReader("/sys/module/synaptics_i2c_rmi_1564/parameters/dup_threshold");
 	    	BufferedReader reader = new BufferedReader(input);
-	    	value = reader.readLine();
+	    	filterThreshold = reader.readLine();
 	    	reader.close();
 	    	input.close();
-	    	
+	    
+	    	seekBar.setProgress(Integer.valueOf(filterThreshold));
+	        seekBarValue.setText(filterThreshold);
+	        if(Integer.valueOf(filterThreshold)>0) filter.setChecked(true);
 		} catch (Exception e) {
 			Log.d("X5 Settings", "Unexpected error: "+e.getMessage());
-			return 0;
 		}
-	    if(value == null) return 0;
-	    else return Integer.parseInt(value);
-	
 	}
 }

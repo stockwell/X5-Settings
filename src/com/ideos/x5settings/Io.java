@@ -17,12 +17,14 @@ public class Io extends Activity{
 	private static String[] availableSchedulers;
 	private static String currentScheduler;
 
+	private Button applyButton;
+	private Spinner scheds;
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.io);
 
-        final Button applyButton = (Button) findViewById(R.id.button1);
-        final Spinner scheds = (Spinner) findViewById(R.id.spinner1);
+        applyButton = (Button) findViewById(R.id.button1);
+        scheds = (Spinner) findViewById(R.id.spinner1);
         
     	availableSchedulers = getSchedulers();
     	int i = 0;
@@ -52,7 +54,7 @@ public class Io extends Activity{
 		boolean WRITE = false;
 		
 		String scheduler = "echo ";
-		scheduler += ((Spinner) findViewById(R.id.spinner1)).getSelectedItem().toString();
+		scheduler += scheds.getSelectedItem().toString();
 		scheduler += " > /sys/devices/platform/msm_sdcc.2/mmc_host/mmc0/mmc0:0001/block/mmcblk0/queue/scheduler";
 		
 		WRITE = Rootcommands.runRootCommand("mount -o rw,remount -t ext4 /dev/block/mmcblk0p12 /system");

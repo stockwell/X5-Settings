@@ -15,12 +15,14 @@ import android.os.Vibrator;
 
 public class Haptic extends Activity{
 	private Vibrator hapticVib;
+	
 	private static int vibLength;
 	
 	private Button applyButton;
 	private CheckBox vibrate;
 	private SeekBar seekBar;
 	private TextView seekBarValue;
+	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.haptic);

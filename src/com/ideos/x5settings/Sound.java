@@ -12,18 +12,19 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 public class Sound extends Activity{
+	private Button applyButton;
+	private CheckBox forceHeadset;
+	private CheckBox speakerphoneEcho;
+	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sound);
         
-        final Button applyButton = (Button) findViewById(R.id.button1);
-        final CheckBox forceHeadset = (CheckBox) findViewById(R.id.checkBox1);
-        final CheckBox speakerphoneEcho = (CheckBox) findViewById(R.id.checkBox2);
+        applyButton = (Button) findViewById(R.id.button1);
+        forceHeadset = (CheckBox) findViewById(R.id.checkBox1);
+        speakerphoneEcho = (CheckBox) findViewById(R.id.checkBox2);
         
-        String currentSettings[] = getSoundSettings();
-        
-        if (Integer.valueOf(currentSettings[0])==1) forceHeadset.setChecked(true);
-        if (Integer.valueOf(currentSettings[1])==1) speakerphoneEcho.setChecked(true);
+        getSoundSettings();
         
         applyButton.setOnClickListener(new View.OnClickListener() {
     		public void onClick(View view) {
@@ -37,9 +38,9 @@ public class Sound extends Activity{
 		
 		String headsetSwitch = "echo ";
 		String echoFix = "echo ";
-		headsetSwitch += (((CheckBox) findViewById(R.id.checkBox1)).isChecked()) ? 1 : 0;
+		headsetSwitch += forceHeadset.isChecked() ? 1 : 0;
 		headsetSwitch += " > /sys/module/snd_soc_msm7kv2/parameters/headset_mic_switch";
-		echoFix += (((CheckBox) findViewById(R.id.checkBox2)).isChecked()) ? 1 : 0;
+		echoFix += speakerphoneEcho.isChecked() ? 1 : 0;
 		echoFix += " > /sys/module/snd_soc_msm7kv2/parameters/speakerphone_echo_fix";
 		
 		WRITE = Rootcommands.runRootCommand("mount -o rw,remount -t ext4 /dev/block/mmcblk0p12 /system");
@@ -62,7 +63,7 @@ public class Sound extends Activity{
 		}
 	}
 	
-	public static String[] getSoundSettings() {
+	public void getSoundSettings() {
 		String settings[] = {null, null};
 		try {
 			FileReader input = new FileReader("/sys/module/snd_soc_msm7kv2/parameters/headset_mic_switch");
@@ -78,9 +79,11 @@ public class Sound extends Activity{
 	    	
 	    	settings[1] = reader.readLine();
 	    	
+	    	if (Integer.valueOf(settings[0])==1) forceHeadset.setChecked(true);
+	        if (Integer.valueOf(settings[1])==1) speakerphoneEcho.setChecked(true);
+	    	
 		} catch (Exception e) {
 			Log.d("X5 Settings", "Unexpected error: "+e.getMessage());
 		}
-	    return settings;
 	}
 }

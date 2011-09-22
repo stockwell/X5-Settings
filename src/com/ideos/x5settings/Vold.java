@@ -13,14 +13,15 @@ import android.widget.Toast;
 import android.widget.Spinner;
 
 public class Vold extends Activity{
-	private static String voldPrimary = voldStatus();
+	public Button applyButton;
+	public Spinner spinner;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vold);
         
-        final Button applyButton = (Button) findViewById(R.id.button1);
-    	final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+        applyButton = (Button) findViewById(R.id.button1);
+    	spinner = (Spinner) findViewById(R.id.spinner1);
         
         String[] voldItems = getResources().getStringArray(R.array.sel_storage);
      	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -33,9 +34,7 @@ public class Vold extends Activity{
     			setVold(spinner.getSelectedItemPosition());
           	 }
 		});
-    	
-    	int index = voldPrimary.matches("sdcard") ? 1 : 0;
-    	spinner.setSelection(index);
+    	voldStatus();
 	}
 	
 	public boolean setVold(int Index){
@@ -58,7 +57,7 @@ public class Vold extends Activity{
 		return true;
 	}
 	
-	public static String voldStatus() {
+	public void voldStatus() {
 		String fstab = null;
 		String emmcLocation = null;
 		try {
@@ -69,12 +68,12 @@ public class Vold extends Activity{
 	    		if (fstab.matches(".*mmc0.*")) emmcLocation = fstab.split(" ")[2];
 	    	reader.close();
 	    	input.close();
+	    	
+	    	int index = emmcLocation.matches("/mnt/emmc") ? 1 : 0;
+	    	spinner.setSelection(index);
 		}
 		 catch (Exception e) {
 			Log.d("X5 Settings", "Unexpected error: "+e.getMessage());
-			return "error";
 		}
-	    if(emmcLocation.matches("/mnt/sdcard")) return "emmc";
-	    else return "sdcard";
 	}
 }

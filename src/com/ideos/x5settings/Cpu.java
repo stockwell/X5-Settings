@@ -23,22 +23,31 @@ public class Cpu extends Activity{
 	private static String currentGovernor;
 	private Handler mHandler = new Handler();
 	
+	private Button applyButton;
+	private TextView minFreqValue;
+	private TextView maxFreqValue;
+	private TextView currentFreqValue;
+	private SeekBar minSeekBar;
+	private SeekBar maxSeekBar;
+	private Spinner govs;
+	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cpu);
     	
-        final Button applyButton = (Button) findViewById(R.id.button1);
-    	final TextView minFreqValue = (TextView)findViewById(R.id.textView4);
-    	final TextView maxFreqValue = (TextView)findViewById(R.id.textView5);
-    	final SeekBar minSeekBar = (SeekBar) findViewById(R.id.seekBar1);
-    	final SeekBar maxSeekBar = (SeekBar) findViewById(R.id.seekBar2);
-        
+        applyButton = (Button) findViewById(R.id.button1);
+    	minFreqValue = (TextView)findViewById(R.id.textView4);
+    	maxFreqValue = (TextView)findViewById(R.id.textView5);
+    	currentFreqValue = (TextView) findViewById(R.id.textView6);
+    	minSeekBar = (SeekBar) findViewById(R.id.seekBar1);
+    	maxSeekBar = (SeekBar) findViewById(R.id.seekBar2);
+    	govs = (Spinner) findViewById(R.id.spinner1);
+    	
     	currentFreq = getMinMax();
     	currentGovernor = getCurrentGovernor();
     	freqArray = getFrequencies();
     	availableGovernors = getGovernors();
-    	
-        Spinner govs = (Spinner) findViewById(R.id.spinner1);
+        
     	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
     	android.R.layout.simple_spinner_item, availableGovernors);
     	govs.setAdapter(adapter);
@@ -48,7 +57,6 @@ public class Cpu extends Activity{
     			setCPU();
           	 }
 		});   
-    	
     	
 		minSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 			public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
@@ -94,15 +102,15 @@ public class Cpu extends Activity{
 		boolean WRITE = false;
 		
 		String min = "echo ";
-		min += ((TextView)findViewById(R.id.textView4)).getText();
+		min += minFreqValue.getText();
 		min += " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq";
 		
 		String max = "echo ";
-		max += ((TextView)findViewById(R.id.textView5)).getText();
+		max += maxFreqValue.getText();
 		max += " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq";
 		
 		String governor = "echo ";
-		governor += ((Spinner) findViewById(R.id.spinner1)).getSelectedItem().toString();
+		governor += govs.getSelectedItem().toString();
 		governor += " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor";
 		
 		WRITE = Rootcommands.runRootCommand("mount -o rw,remount -t ext4 /dev/block/mmcblk0p12 /system");
@@ -218,7 +226,7 @@ private Runnable UpdateCpuFreq = new Runnable() {
 			} catch (Exception e) {
 				Log.d("X5 Settings", "Unexpected error: "+e.getMessage());
 			}
-		   ((TextView) findViewById(R.id.textView6)).setText(currentFreq);  
+		   currentFreqValue.setText(currentFreq);  
 		   mHandler.postDelayed(UpdateCpuFreq, 800);
 	   }
 	};
