@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">X5 Settings</string>
+	<string name="app_author">Created by Stockwell (2011)</string>	
 	<string name="enable_feedback">Enable Feedback</string>
 	<string name="complete">Complete</string>
 	<string name="complete_reboot">Complete, reboot for change to take affect</string>
