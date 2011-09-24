@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">U8800设置</string>
     <string name="app_author">Created by Stockwell (2011)\n icehong at gmail 简体中文本地化</string>
-    <string name="enable_feedback">开启反馈</string
+    <string name="enable_feedback">开启反馈</string>
     <string name="complete">完成</string>
     <string name="complete_reboot">完成, 重启后生效</string>
 	<string name="temp">键盘LED背光临时关闭, 重启后恢复</string>
