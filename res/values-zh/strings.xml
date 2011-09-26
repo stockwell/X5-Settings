@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">U8800设置</string>
-    <string name="enable_feedback">使能反馈</string>
+    <string name="app_author">Created by Stockwell (2011)\n icehong at gmail 简体中文本地化</string>
+    <string name="enable_feedback">开启反馈</string>
     <string name="complete">完成</string>
     <string name="complete_reboot">完成, 重启后生效</string>
+	<string name="temp">键盘LED背光临时关闭, 重启后恢复</string>
     <string name="exit">退出</string>
-    <string name="dup_filter">使能重复过滤</string>
+    <string name="dup_filter">打开屏幕过滤</string>
     <string name="cpu_governor">管理方式</string>
 	<string name="min_fre">最小频率</string>
 	<string name="max_fre">最大频率</string>
 	<string name="io_sch">I/O 调度模式</string>
 	<string name="use_phone_mic">强制使用耳机麦克风</string>
-	<string name="speakerphone_echo_fix">Fix speakerphone echo</string>
-	<string name="disable_keypad_leds">Disable keypad LEDs</string>
+	<string name="speakerphone_echo_fix">修复扬声器回声</string>
+	<string name="disable_keypad_leds">临时关闭键盘LED显示</string>
     <string-array name="menuItems_array">
     	<item>软键盘震动强度</item>
     	<item>触摸屏过滤器</item>
     	<item>内部/外部 存储器选择</item>
-    	<item>通知 LED</item>
+    	<item>通知LED显示方式</item>
     	<item>CPU 频率管理 </item>
     	<item>I/O 调度</item>
     	<item>音频设置</item>
-    	<item>Dynamic Undervolting</item>
-    	<item>About X5settings</item>
+    	<item>动态低电压设置</item>
+    	<item>关于 U8800设置</item>
     </string-array>
     <string-array name="sel_storage">
 		<item>內部存储器</item>
 		<item>外部存储器</item>
 	</string-array>
 	<string-array name="sel_led">
-		<item>睡眠时不使用</item>
-		<item>睡眠时使用</item>
-		<item>背光通知</item>
+		<item>不使用LED通知</item>
+		<item>使用LED通知</item>
+		<item>使用背光通知</item>
 	</string-array>	
-	
 </resources>
