@@ -15,6 +15,9 @@
 	<string name="use_phone_mic">Force phone mic with headset</string>	
 	<string name="speakerphone_echo_fix">Fix speakerphone echo</string>
 	<string name="disable_keypad_leds">Disable keypad LEDs</string>
+	<string name="volumefactor">Voice Volume</string>
+	<string name="sound_options">Other Options</string>
+	<string name="gemini">Enable Gemini JPEG encoding engine</string>
 	<string-array name="menuItems_array">
 		<item>Softkey Haptic Feedback</item>
 		<item>Touchscreen Filter</item>
@@ -23,8 +26,7 @@
 		<item>CPU Frequency and Governor</item>
 		<item>I/O Scheduler</item>
 		<item>Audio Settings</item>
-		<item>Dynamic Undervolting</item>
-		<item>About X5settings</item>
+		<item>Miscellaneous</item>
 	</string-array>
 	<string-array name="sel_storage">
 		<item>Internal Storage</item>

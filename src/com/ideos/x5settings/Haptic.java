@@ -75,7 +75,7 @@ public class Haptic extends Activity{
 	public void setVibrate(Boolean vibrate){
 		boolean WRITE = false;		   
 		    int newVibeLength = 0;
-		    if(vibrate) newVibeLength = vibLength;
+		    if(vibrate) newVibeLength = seekBar.getProgress();
 			WRITE = Rootcommands.runRootCommand("mount -o rw,remount -t ext4 /dev/block/mmcblk0p12 /system");
 			if(WRITE) {
 				Rootcommands.runRootCommand("echo -e 'echo "+newVibeLength+" > /sys/module/synaptics_i2c_rmi_1564/parameters/vibrate\n" +

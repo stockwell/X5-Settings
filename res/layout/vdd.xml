@@ -4,11 +4,9 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent" android:gravity="right">
-    <Spinner android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/spinner1"></Spinner>
-    <EditText android:layout_alignParentLeft="true" android:layout_below="@+id/spinner1" android:layout_height="wrap_content" android:id="@+id/editText1" android:layout_width="match_parent" android:inputType="number">
-        <requestFocus></requestFocus>
-    </EditText>
-    <Button android:text="@android:string/ok" android:id="@+id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/editText1" android:layout_alignParentRight="true" android:layout_marginRight="100dp"></Button>
-    <Button android:text="Test" android:id="@+id/button2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/editText1" android:layout_toLeftOf="@+id/button1" android:layout_marginRight="35dp"></Button>
+    <Spinner android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/spinner1" android:layout_marginLeft="10dip" android:layout_marginRight="10dip"></Spinner>
+    <EditText android:id="@+id/editText1" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignTop="@+id/button2" android:layout_alignRight="@+id/button2" android:layout_marginLeft="58dip" android:layout_marginRight="48dp"></EditText>
+    <Button android:layout_width="wrap_content" android:text="@android:string/ok" android:id="@+id/button1" android:layout_height="wrap_content" android:layout_below="@+id/editText1" android:layout_centerHorizontal="true" android:layout_marginTop="14dp"></Button>
+    <Button android:layout_width="wrap_content" android:text="Test" android:id="@+id/button2" android:layout_height="wrap_content" android:layout_below="@+id/spinner1" android:layout_toRightOf="@+id/button1" android:layout_marginLeft="33dp"></Button>
     
 </RelativeLayout>

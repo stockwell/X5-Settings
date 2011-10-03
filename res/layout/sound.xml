@@ -4,6 +4,19 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
+  <TextView android:id="@+id/textview1"
+    android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium"
+    android:text="@string/volumefactor" android:layout_height="wrap_content"></TextView>
+  <SeekBar android:id="@+id/seekBar1"
+    android:layout_height="wrap_content" android:layout_width="match_parent"
+    android:max="150" android:layout_marginLeft="15dip" android:layout_marginRight="15dip"></SeekBar>
+  <TextView android:layout_gravity="right"
+    android:id="@+id/textView2" android:layout_width="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium" android:text="textView2"
+    android:layout_height="wrap_content"></TextView>
+  <TextView android:id="@+id/textView3"
+     android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium"
+     android:text="@string/sound_options" android:layout_height="wrap_content"></TextView>
   <CheckBox android:text="@string/use_phone_mic"
 	  android:id="@+id/checkBox1" android:layout_width="wrap_content"
 	  android:layout_height="wrap_content"></CheckBox>

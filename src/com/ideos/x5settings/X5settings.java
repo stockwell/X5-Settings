@@ -68,9 +68,9 @@ public class X5settings extends ListActivity {
 		else if (position == 6)
 			myIntent = new Intent(v.getContext(), Sound.class);
 		else if (position == 7)
-			myIntent = new Intent(v.getContext(), Vdd.class);
+			myIntent = new Intent(v.getContext(), Misc.class);
 		else if (position == 8)
-			myIntent = new Intent(v.getContext(), About.class);
+			myIntent = new Intent(v.getContext(), Vdd.class);
 		else
 			myIntent = null;
 		if (ROOT)
