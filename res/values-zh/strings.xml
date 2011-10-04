@@ -15,7 +15,9 @@
 	<string name="use_phone_mic">强制使用耳机麦克风</string>
 	<string name="speakerphone_echo_fix">修复扬声器回声</string>
 	<string name="disable_keypad_leds">临时关闭键盘LED显示</string>
-	<string name="volumefactor">Voice volume</string>
+	<string name="volumefactor">语音音量</string>
+	<string name="sound_options">其它选项</string>
+	<string name="gemini">使用 Gemini JPEG 编码器</string>
     <string-array name="menuItems_array">
     	<item>软键盘震动强度</item>
     	<item>触摸屏过滤器</item>
@@ -24,7 +26,7 @@
     	<item>CPU 频率管理 </item>
     	<item>I/O 调度</item>
     	<item>音频设置</item>
-    	<item>Miscellaneous</item>
+    	<item>其它杂项</item>
     </string-array>
     <string-array name="sel_storage">
 		<item>內部存储器</item>
