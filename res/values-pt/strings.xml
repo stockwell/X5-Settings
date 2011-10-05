@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">X5 Settings</string>
-	<string name="enable_feedback">Permitir Comentários</string>
+	<string name="enable_feedback">Permitir feedback</string>
 	<string name="complete">Completo</string>
 	<string name="complete_reboot">Completo, reinicia para fazer efeito</string>
 	<string name="exit">Fechar</string>
@@ -12,8 +12,8 @@
 	<string name="io_sch">Sequenciador I/O</string>
 	<string name="use_phone_mic">Força o uso do microfone to telemóvel com o headset</string>
 	<string name="speakerphone_echo_fix">Fix para o echo do microfone</string>
-	<string name="disable_keypad_leds">Disable keypad LEDs</string>
-	<string name="volumefactor">Voice volume</string>
+	<string name="disable_keypad_leds">Desactivar a iluminação LED do keypad</string>
+	<string name="volumefactor">Volume da voz</string>
 	<string-array name="menuItems_array">
 		<item>Teclas Haptic Feedback</item>
 		<item>Filtro do Touchscreen</item>
@@ -22,7 +22,7 @@
 		<item>Frequência e escalonador do CPU</item>
 		<item>Sequenciador I/O</item>
 		<item>Definições de som</item>
-		<item>Miscellaneous</item>
+		<item>Diversos</item>
 	</string-array>
 	<string-array name="sel_storage">
 		<item>Armazenamento Interno</item>
