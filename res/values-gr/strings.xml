@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">X5 Ρυθμίσεις</string>
+	<string name="app_author">Δημιουργήθηκε απο τον Stockwell (2011)\nGreek localization by demolition23</string>	
+	<string name="enable_feedback">Ενεργοποίηση απτικής ανάδρασης</string>
+	<string name="complete">Ολοκληρώθηκε</string>
+	<string name="complete_reboot">Ολοκληρώθηκε, επανεκκινιση για να ισχύσουν οι αλλαγές</string>
+	<string name="temp">Keypad backlight LEDs disabled, αυτό δεν θα συνεχιστεί μετά την επανεκκίνηση</string>
+	<string name="exit">Έξοδος</string>
+	<string name="dup_filter">Ενεργοποίηση διπλασιασμού φίλτρου</string>
+	<string name="cpu_governor">Governor</string>
+	<string name="min_fre">Ελάχιστη συχνότητα</string>
+	<string name="max_fre">Μέγιστη συχνότητα</string>
+	<string name="io_sch">I/O Scheduler</string>
+	<string name="use_phone_mic">Force phone mic with headset</string>	
+	<string name="speakerphone_echo_fix">>Επιδιόρθωση ηχούς μεγαφωνου</string>
+	<string name="disable_keypad_leds">Απενεργοποίηση LED πληκρολογίου</string>
+	<string name="volumefactor">Ένταση φωνής</string>
+	<string name="sound_options">’λλες επιλογές</string>
+	<string name="gemini">Ενεργοποίηση Gemini JPEG encoding</string>
+	<string-array name="menuItems_array">
+		<item>Απτική ανάδραση Softkey</item>
+		<item>Φίλτρο οθόνης αφής</item>
+		<item>Επιλογή εσωτερικής/εξωτερικής μνήμης αποθήκευσης</item>
+		<item>Ειδοποιήσεις LED</item>
+		<item>Συχνότητες CPU και Governor</item>
+		<item>I/O Scheduler</item>
+		<item>Ήχος</item>
+		<item>Διάφορες επιλογές</item>
+	</string-array>
+	<string-array name="sel_storage">
+		<item>Εσωτερική μνήμη αποθήκευσης</item>
+		<item>Εξωτερική μνήμη αποθήκευσης</item>
+	</string-array>
+	<string-array name="sel_led">
+		<item>Απενεργοποίηση στη λειτουργεία Ύπνου</item>
+		<item>Ενεργοποίηση στη λειτουργεία Ύπνου</item>
+		<item>Ειδοποίηση φωτισμού οθόνης</item>
+	</string-array>
+</resources>
