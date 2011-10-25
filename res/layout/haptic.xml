@@ -9,7 +9,8 @@
     android:text="@string/enable_feedback"> </CheckBox>
    <SeekBar android:layout_height="wrap_content" 
    	android:id="@+id/seekBar1" android:layout_width="match_parent" 
-   	android:layout_marginLeft="15dip" android:layout_marginRight="15dip"></SeekBar>
+   	android:layout_marginLeft="15dip" android:layout_marginRight="15dip"
+   	android:max="50"></SeekBar>
    <TextView android:layout_height="wrap_content"
    	android:id="@+id/textView2" android:layout_width="wrap_content" 
    	android:textAppearance="?android:attr/textAppearanceMedium" 

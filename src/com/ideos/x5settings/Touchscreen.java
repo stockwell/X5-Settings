@@ -34,7 +34,7 @@ public class Touchscreen extends Activity{
         filter.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if (filter.isChecked()){
-					seekBar.setProgress(5);
+					seekBar.setProgress(8);
 				}
 				else {
 					seekBar.setProgress(0);					
